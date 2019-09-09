@@ -11,3 +11,10 @@
 |
 */
 
+Route::get('/', 'LinkController@createShortLink')->name('create-short-link');
+
+Route::post('/handle-new-link', 'LinkController@handleNewLink')->name('handle-new-link');
+
+Route::get('/link/{id}', 'LinkController@redirectToOriginalLink')->name('short-link');
+
+Route::get('/link/show-info/{id}', 'LinkController@showLinkInfo')->name('link-information');
